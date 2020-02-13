@@ -1,101 +1,101 @@
 [{
   "id": 1,
   "title": "Technical Lead",
-  "company": "Npath"
+  "company": "Cred"
 }, {
   "id": 2,
   "title": "Technical Writer",
-  "company": "Jaloo"
+  "company": "Spottabl"
 }, {
   "id": 3,
   "title": "Executive Secretary",
-  "company": "Wikido"
+  "company": "Vedantu"
 }, {
   "id": 4,
   "title": "Financial Advisor",
-  "company": "Tekfly"
+  "company": "MyGate"
 }, {
   "id": 5,
   "title": "Cheif of Staff",
-  "company": "Quaxo"
+  "company": "Spottabl"
 }, {
   "id": 6,
   "title": "Account Executive",
-  "company": "Babbleopia"
+  "company": "Cred"
 }, {
   "id": 7,
   "title": "General Manager",
-  "company": "Wordify"
+  "company": "Spottabl"
 }, {
   "id": 8,
   "title": "Sales Associate",
-  "company": "Aivee"
+  "company": "Vedantu"
 }, {
   "id": 9,
   "title": "Quality Engineer",
-  "company": "Zoombeat"
+  "company": "MyGate"
 }, {
   "id": 10,
   "title": "Executive Secretary",
-  "company": "Tagchat"
+  "company": "MyGate"
 }, {
   "id": 11,
-  "title": "Geological Engineer",
-  "company": "Realmix"
+  "title": "DevOps Lead",
+  "company": "Vedantu"
 }, {
   "id": 12,
   "title": "Help Desk Technician",
-  "company": "Dazzlesphere"
+  "company": "Spottabl"
 }, {
   "id": 13,
-  "title": "Teacher",
-  "company": "Aivee"
+  "title": "Staff Engineer",
+  "company": "Vedantu"
 }, {
   "id": 14,
-  "title": "Actuary",
-  "company": "Fadeo"
+  "title": "Staff Engineer",
+  "company": "Spottabl"
 }, {
   "id": 15,
-  "title": "Actuary",
-  "company": "Jabbersphere"
+  "title": "UX Designer",
+  "company": "MyGate"
 }, {
   "id": 16,
   "title": "Senior Financial Analyst",
-  "company": "Rhyzio"
+  "company": "MyGate"
 }, {
   "id": 17,
   "title": "Help Desk Operator",
-  "company": "Gigabox"
+  "company": "Cred"
 }, {
   "id": 18,
   "title": "Programmer Analyst III",
-  "company": "Zoomdog"
+  "company": "MyGate"
 }, {
   "id": 19,
-  "title": "Librarian",
-  "company": "Katz"
+  "title": "DevOps Intern",
+  "company": "Spottabl"
 }, {
   "id": 20,
   "title": "Budget/Accounting Analyst II",
-  "company": "Brainbox"
+  "company": "Vedantu"
 }, {
   "id": 21,
   "title": "Sales Representative",
-  "company": "Skyba"
+  "company": "Vedantu"
 }, {
   "id": 22,
-  "title": "Actuary",
-  "company": "Youspan"
+  "title": "DevOps Lead",
+  "company": "Spottabl"
 }, {
   "id": 23,
-  "title": "Actuary",
-  "company": "Meemm"
+  "title": "Data scientist",
+  "company": "Spottabl"
 }, {
   "id": 24,
-  "title": "Analog Circuit Design manager",
-  "company": "Quinu"
+  "title": "UI Lead",
+  "company": "MyGate"
 }, {
   "id": 25,
   "title": "General Manager",
-  "company": "Topiclounge"
+  "company": "MyGate"
 }]

@@ -1,9 +1,20 @@
 .plainBtn {
-  background: none;
+  background: #fff;
   color: #495057;
+  border:1px solid #d1d6dc;
   border-left: none;
-  &:hover {
-    background: none;
-    color: #495057;
+  &:hover, &:focus, &:active {
+    border:1px solid #d1d6dc !important;
+    border-left: none !important;
+    background-color: #fff !important;
+    color: #495057 !important;
+    box-shadow: none !important;
+  }
+}
+
+.searchInput {
+  border-right: #fff;
+  &:focus {
+    box-shadow:none;
   }
 }

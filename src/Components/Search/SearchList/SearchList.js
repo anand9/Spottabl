@@ -1,8 +1,6 @@
 import React from 'react';
 import {
-  Card, 
-  CardBody,
-  Button
+  Card
 } from 'reactstrap'
 import styles from '../SearchList/SearchList.module.scss'
 
@@ -12,7 +10,7 @@ const SearchList = (props) => {
     <>
       <div className="">
         <Card className={styles.searchListCard}>
-          <CardBody>
+          <div className={"card-body "+ styles.cardBody}>
             <div className={styles.searchList}>
               <div className={styles.content}>
                 <div className="title">
@@ -26,7 +24,7 @@ const SearchList = (props) => {
                 <button className={"btn " + styles.btnPrimary}>Know more</button>
               </div>
             </div>
-          </CardBody>
+          </div>
         </Card>
       </div>
     </>
