@@ -1,0 +1,21 @@
+@import '../../../Assets/Styles/variable.scss';
+
+.searchListCard {
+  margin-top: 1rem;
+  box-shadow: -5px 3px 9px 0px #0000001a;
+}
+
+.searchList {
+  display: flex;
+  justify-content: space-between;
+}
+
+.btnPrimary{
+  background-color: $primaryBtn;
+  border-color: $primaryBtn;
+  color: $primaryBtnColor;
+}
+
+.content {
+  text-align: left;
+}
