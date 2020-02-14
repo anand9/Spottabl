@@ -25,3 +25,22 @@ body {
   border-top-right-radius: 1.5rem !important;
   border-bottom-right-radius: 1.5rem !important;
 }
+
+@media screen and (min-width: 1200px) {
+  .slick-slide  {
+    margin-top: 4rem;
+    // height: 15rem;
+  }
+  .slick-current {
+    margin-right: 2rem;
+    img{
+      width: 12rem;
+      height: 15rem;
+      margin-top: -4rem;
+      transition: 1s;
+    }
+  } 
+  .slick-dots {
+    top: 16rem;
+  } 
+}

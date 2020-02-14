@@ -1,7 +1,7 @@
 @import '../../../Assets/Styles/variable.scss';
 
 .outerBox {
-  border: 2px solid $brandText;
+  border: 2px solid $brandColor;
   height: 28rem;
   position: relative;
   margin-top: 0rem;;
@@ -12,7 +12,7 @@
   padding-left: 1rem;
   text-align: left;
   font-size: .9rem;
-  color: $brandText;
+  color: $brandColor;
 }
 
 .userInfo {

@@ -8,7 +8,7 @@ import {
 import TeamHome from './Components/Team/TeamHome';
 import SearchHome from './Components/Search/SearchHome';
 import TopNav from './Components/Layout/TopNav';
-import './index.css'
+import './override.scss'
 
 function App() {
   return (
