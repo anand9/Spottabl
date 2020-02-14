@@ -1,3 +1,5 @@
+@import './Assets/Styles/variable.scss';
+
 /* body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -14,6 +16,8 @@ code {
 
 body {
   background-color: #f7f7f7;
+  background-image: url('./Assets/Images/particlebg-cr.png' );
+  // background-size: cover;
 }
 
 .rounded-left {
@@ -43,4 +47,17 @@ body {
   .slick-dots {
     top: 16rem;
   } 
+  .slick-arrow{
+    margin-top: 1.8rem;
+    z-index: 99;
+    &:before {
+      color: $brandColor;
+    }
+  } 
+  .slick-prev {
+    left: 1rem;
+  }
+  .slick-next {
+    right: 1rem;
+  }
 }

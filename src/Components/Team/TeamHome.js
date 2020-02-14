@@ -24,12 +24,12 @@ const TeamHome = () => {
         <Row className="justify-content-center">
           <Col md="10" lg="10" xs="12" className="text-center">
             {/* <div className={styles.teamContainer}> */}
-            <div class="row">
+            <div className="row">
             <Col md="5" lg="5" xs="12" sm="12">
                 <TeamDetails user={currentUser}/>
               </Col>
               <Col md="7" lg="7" xs="12" sm="12">
-                <div class={styles.sliderContainer}>
+                <div className={styles.sliderContainer}>
                   <TeamSlider setCurrentUser={setCurrentUser} teamData={teamData}/> 
                 </div>
 

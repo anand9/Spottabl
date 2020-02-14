@@ -4,7 +4,7 @@ import styles from './Slider.module.scss'
 const SingleSlide = (props) => {
   return (
     <div >
-      <div class={styles.imageBox}>
+      <div className={styles.imageBox}>
         <img className={styles.userImage} src={props.user.photo}></img>
       </div>
       
