@@ -20,7 +20,7 @@ const SearchList = (props) => {
                   {company}
                 </div>
               </div>
-              <div className="actions">
+              <div className={styles.actions}>
                 <button className={"btn " + styles.btnPrimary}>Know more</button>
               </div>
             </div>
