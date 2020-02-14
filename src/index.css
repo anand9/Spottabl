@@ -15,3 +15,13 @@ code {
 body {
   background-color: #f7f7f7;
 }
+
+.rounded-left {
+  border-top-left-radius: 1.5rem !important;
+  border-bottom-left-radius: 1.5rem !important;
+}
+
+.rounded-right {
+  border-top-right-radius: 1.5rem !important;
+  border-bottom-right-radius: 1.5rem !important;
+}

@@ -35,7 +35,7 @@ const SearchBar = (props) => {
           placeholder="Search by Title and Company"
           onChange={onchange}
           value={searchText}
-          className={styles.searchInput}
+          className={"rounded-left "+styles.searchInput}
         />
         <InputGroupAddon addonType="prepend">
           <Button className={styles.plainBtn}>

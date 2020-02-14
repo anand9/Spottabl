@@ -48,7 +48,7 @@ const FilterBtn = (props) => {
   return (
     <>
       <InputGroupButtonDropdown addonType="append" isOpen={dropdownOpen} toggle={toggleDropDown}>
-        <DropdownToggle className={styles.plainBtn}>
+        <DropdownToggle className={"rounded-right "+styles.plainBtn}>
           <FontAwesomeIcon icon={faFilter} />
         </DropdownToggle>
         <DropdownMenu>
