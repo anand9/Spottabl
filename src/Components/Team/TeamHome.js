@@ -26,10 +26,10 @@ const TeamHome = () => {
           <Col md="10" lg="10" xs="12" className="text-center">
             {/* <div className={styles.teamContainer}> */}
             <div class="row">
-            <Col md="5">
+            <Col md="5" lg="5" xs="12" sm="12">
                 <TeamDetails user={currentUser}/>
               </Col>
-              <Col md="7">
+              <Col md="7" lg="7" xs="12" sm="12">
                 <div class={styles.sliderContainer}>
                   <TeamSlider setCurrentUser={setCurrentUser} teamData={teamData}/> 
                 </div>
