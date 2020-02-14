@@ -18,7 +18,9 @@ const SearchHome = () => {
   //const [filteredComp, setFilterComp] = useState([])
 
   const filterList=(searchText)=>{
-    let newList = searchData.filter((list)=>
+    let searchableList
+    filteredComp.length >0? searchableList = filteredComp : searchableList = searchData
+    let newList = searchableList.filter((list)=>
       (list.company.toLowerCase().search(searchText) !== -1) || (list.title.toLowerCase().search(searchText) !== -1)
     )
     setFilter([...newList])
@@ -38,11 +40,12 @@ const SearchHome = () => {
   }
 
   const filterCompany=(filters)=>{
+    let searchableList
+//    filtered.length >0? searchableList = filtered : searchableList = searchData
     if (filters.length>0){
-      let newList = searchData.filter((list)=> filters.includes(list.company))
+      let newList = filtered.filter((list)=> filters.includes(list.company))
     setFilter([...newList])
-    setFilteredComp(newList)
-    console.log("fil comp",filteredComp)
+    setFilteredComp([...newList])
     }
   }
   
