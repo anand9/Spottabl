@@ -28,7 +28,7 @@ const SearchBar = (props) => {
           type="text"
           name="search"
           id="searchInp"
-          placeholder="Search by Title and Company"
+          placeholder="Search by title or company"
           onChange={onchange}
           value={searchText}
           className={"rounded-left "+styles.searchInput}
