@@ -17,15 +17,18 @@ const SearchHome = () => {
 
   const [searchResult, setSearch] = useState([...searchData])
   const [filteredComp, setFilteredComp] = useState([])
+  const [searchableList, setSearchbleList]= useState([...searchResult])
   //const [filteredComp, setFilterComp] = useState([])
 
   const filterList=(searchText)=>{
-    let searchableList
-    filteredComp.length >0? searchableList = filteredComp : searchableList = searchData
+    //let searchableList
+    filteredComp.length >0? setSearchbleList([...filteredComp]) : setSearchbleList([...searchData])
     let newList = searchableList.filter((list)=>
       (list.company.toLowerCase().search(searchText) !== -1) || (list.title.toLowerCase().search(searchText) !== -1)
     )
     setSearch([...newList])
+    console.log(searchResult);
+    
   }
 
   const companyFilterUpdate=(comp)=>{
@@ -36,21 +39,17 @@ const SearchHome = () => {
       });
       
     }
-    //setFilterComp([...filters])
     filterCompany(filters)
     
   }
 
   const filterCompany=(filters)=>{
-    let searchableList
-//    filtered.length >0? searchableList = filtered : searchableList = searchData
     if (filters.length>0){
-      let newList = searchResult.filter((list)=> filters.includes(list.company))
+      let newList = searchableList.filter((list)=> filters.includes(list.company))
       setSearch([...newList])
       setFilteredComp([...newList])
     } else {
       //console.log("ding", searchResult);
-      
       setFilteredComp(searchResult)
     }
   }
@@ -73,7 +72,7 @@ const SearchHome = () => {
             :
             <NoRecord />
           }
-          {searchResult.length >0 ? <SearchPaginate /> : ""}
+          {searchResult.length >3 ? <SearchPaginate /> : ""}
           </div>
           </Col>
         </Row>
