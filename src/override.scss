@@ -34,6 +34,9 @@ body {
   .slick-slide  {
     margin-top: 4rem;
     // height: 15rem;
+    img {
+      transition: 1s;
+    }
   }
   .slick-current {
     margin-right: 2rem;
@@ -41,7 +44,6 @@ body {
       width: 12rem;
       height: 15rem;
       margin-top: -4rem;
-      transition: 1s;
     }
   } 
   .slick-dots {
@@ -59,5 +61,22 @@ body {
   }
   .slick-next {
     right: 1rem;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .slick-slide {
+    img {
+      height: 8rem;
+      margin-top: 3rem;
+      transition: 1s;
+    }
+    
+  }
+  .slick-current {
+    img {
+      height: 11rem;
+      margin-top: 0rem;
+    }
   }
 }

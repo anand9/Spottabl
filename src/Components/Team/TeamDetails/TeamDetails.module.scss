@@ -4,8 +4,20 @@
   border: 2px solid $brandColor;
   height: 28rem;
   position: relative;
-  margin-top: 0rem;
+  margin-top: 2rem;;
+  // margin-top: 0rem;
   background: #f7f7f7;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: 600;
+  background: #f7f7f7;
+  margin-top: -1.6rem;
+  float: left;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  margin-left: 1.4rem;
 }
 
 .userDetails {
@@ -17,7 +29,7 @@
 }
 
 .userInfo {
-  margin-top: 2rem;
+  margin-top: 5rem;
 }
 
 .userName {
@@ -42,4 +54,7 @@
     padding-right: 0rem;
     padding-bottom: 5rem;
   }
+  .outerBox {
+    margin-top: 1rem;
+  } 
 }
