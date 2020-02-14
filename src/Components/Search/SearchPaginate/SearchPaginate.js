@@ -3,11 +3,9 @@ import ReactPaginate from 'react-paginate';
 import styles from './SearchPaginate.module.scss'
 
 
-const SearchPaginate = () => {
+const SearchPaginate = (props) => {
 
-  const handleClick=()=>{
 
-  }
 
   return (
     <div>
@@ -16,10 +14,10 @@ const SearchPaginate = () => {
           nextLabel={'>'}
           breakLabel={'...'}
           breakClassName={'break-me'}
-          pageCount={20}
+          pageCount={props.pageCount}
           marginPagesDisplayed={2}
           pageRangeDisplayed={5}
-          onPageChange={handleClick}
+          onPageChange={props.handlePageClick}
           pageClassName={styles.pageItem}
           nextClassName={styles.pageItem}
           breakClassName={styles.pageItem}

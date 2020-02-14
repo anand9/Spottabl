@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, { Component } from 'react';
 import Fade from 'react-reveal/Fade';
 import {
   Container, 
@@ -12,57 +12,114 @@ import NoRecord from './SearchList/NoRecord';
 import styles from './Search.module.scss'
 import SearchPaginate from './SearchPaginate/SearchPaginate';
 
+class SearchHome extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      searchResult: [...searchData],
+      filteredComp: [],
+      searchableList : [...searchData],
+      limit: 5,
+      offset: 0,
+      pageCount: 1,
+      paginatedData: []
+    };
+  }
 
-const SearchHome = () => {
+ 
 
-  const [searchResult, setSearch] = useState([...searchData])
-  const [filteredComp, setFilteredComp] = useState([])
-  const [searchableList, setSearchbleList]= useState([...searchResult])
-  //const [filteredComp, setFilterComp] = useState([])
+  componentDidMount() {
+    this.loadPageData()
+  }
 
-  const filterList=(searchText)=>{
-    //let searchableList
-    filteredComp.length >0? setSearchbleList([...filteredComp]) : setSearchbleList([...searchData])
-    let newList = searchableList.filter((list)=>
-      (list.company.toLowerCase().search(searchText) !== -1) || (list.title.toLowerCase().search(searchText) !== -1)
-    )
-    setSearch([...newList])
-    console.log(searchResult);
+  loadPageData=()=> {
+    console.log("offset is ", this.state.offset);
+    
+    let currentPaginatedData = this.state.searchResult.slice(this.state.offset, (this.state.offset+ this.state.limit))
+    this.setState({
+      paginatedData: currentPaginatedData
+    })
+    if (this.state.searchResult.length > 0) {
+      this.setState({
+        pageCount:  Math.ceil(this.state.searchResult.length/this.state.limit)
+      })
+    }
+    console.log("welcome", this.state.paginatedData);
     
   }
 
-  const companyFilterUpdate=(comp)=>{
+  setSearch=(newList)=> {
+    this.setState({
+      searchResult: [...newList]
+    })
+  }
+
+  setFilteredComp=(result)=> {
+    this.setState({
+      filteredComp: [...result]
+    })
+  }
+
+  filterCompany=(filters)=>{
+    if (filters.length>0){
+      let newList = this.state.searchableList.filter((list)=> filters.includes(list.company))
+      this.setSearch([...newList])
+      this.setFilteredComp([...newList])
+    } else {
+      //console.log("ding", searchResult);
+      this.setFilteredComp(this.state.searchResult)
+    }
+    this.loadPageData()
+  }
+
+  companyFilterUpdate=(comp)=>{
     let filters = []
     if (comp.length >0) {
       comp.forEach(element => {
         filters.push(element.name)  
       });
-      
     }
-    filterCompany(filters)
-    
+    this.filterCompany(filters)
   }
 
-  const filterCompany=(filters)=>{
-    if (filters.length>0){
-      let newList = searchableList.filter((list)=> filters.includes(list.company))
-      setSearch([...newList])
-      setFilteredComp([...newList])
-    } else {
-      //console.log("ding", searchResult);
-      setFilteredComp(searchResult)
-    }
+  handlePageClick=(data)=> {
+   let selected = data.selected;
+   let offset = Math.ceil(selected * this.state.limit);
+
+   this.setState({ offset: offset }, () => {
+    this.loadPageData()
+   });
   }
+
+  setSearchbleList=(list)=> {
+    this.setState({
+      searchableList:[...list] 
+    })
+  }
+
+  filterList=(searchText)=>{ //filteredComp
+    this.state.filteredComp.length >0? this.setSearchbleList([...this.state.filteredComp]) : this.setSearchbleList([...searchData])
+    let newList = this.state.searchableList.filter((list)=>
+      (list.company.toLowerCase().search(searchText) !== -1) || (list.title.toLowerCase().search(searchText) !== -1)
+    )
+    this.setSearch([...newList])
+    this.loadPageData()
+   // console.log(searchResult);
+  }
+
+
   
-  return (
-    <Fade left>
+  
+  render() { 
+    return (
+      <Fade left>
       <Container>
         <Row className="justify-content-center">
           <Col md="6" lg="6" xs="12" className="text-center">
-            <div class={styles.searchContainer}>
-            <SearchBar filterList={filterList} list={searchData} companyFilter={companyFilterUpdate}/>
-            {searchResult.length >0? 
-            searchResult.map((item)=> {
+            <div className={styles.searchContainer}>
+            <SearchBar filterList={this.filterList} list={searchData} companyFilter={this.companyFilterUpdate}/>
+            {this.state.paginatedData.length > 0?
+            this.state.paginatedData.map((item)=> {
               return (
                 <SearchList item={item} key={item.id} /> 
               )
@@ -72,13 +129,14 @@ const SearchHome = () => {
             :
             <NoRecord />
           }
-          {searchResult.length >3 ? <SearchPaginate /> : ""}
+          {this.state.searchResult.length > this.state.limit  ? <SearchPaginate handlePageClick={this.handlePageClick} pageCount={this.state.pageCount}/> : ""}
           </div>
           </Col>
         </Row>
       </Container>
     </Fade>
-  );
-};
+    );
+  }
+}
 
 export default SearchHome;
