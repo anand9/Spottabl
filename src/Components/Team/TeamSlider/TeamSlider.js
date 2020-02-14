@@ -12,7 +12,6 @@ const TeamSlider = (props) => {
   //const setCurrentUser = props.currentUser
   const onSlide=(current)=> {
     setState({ activeSlide2: current })
-    console.log("haai", teamData[current]);
     setCurrentUser(teamData[current])
     
   }
@@ -56,8 +55,6 @@ const TeamSlider = (props) => {
       }
     ]
   };
-
-  console.log(props)
   return (
     <>
       <Slider {...settings}>

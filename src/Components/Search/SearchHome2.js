@@ -29,7 +29,6 @@ const SearchHome = () => {
       (list.company.toLowerCase().search(searchText) !== -1) || (list.title.toLowerCase().search(searchText) !== -1)
     )
     setSearch([...newList])
-    console.log(searchResult);
   }
 
   useEffect(()=>{
@@ -40,7 +39,6 @@ const SearchHome = () => {
     let currentPaginatedData = searchResult.slice(paginationData.offset, paginationData.offset+ paginationData.limit)
     let arr = [1, 2,3, 4, 5,]
     setPaginatedData(()=>{paginatedData.data =currentPaginatedData })
-    console.log("paginateddata", paginatedData);
     if (searchResult.length > 0) {
       setPagination({
         pageCount: Math.ceil(searchResult.length/paginationData.limit)
@@ -48,15 +46,6 @@ const SearchHome = () => {
     }
   }
 
-  // const loadPageData=()=> {
-  //   let currentPaginatedData = searchResult.slice(paginationData.offset, paginationData.offset+ paginationData.limit)
-  //   let tmp ={data:[]}
-  //   tmp.data = currentPaginatedData
-  //   let a = [1, 2,3, 4, 5]
-    
-  //   console.log("paginateddata", paginatedData);
-  
-  // }
 
   const handlePageClick=(data)=> {
     console.log("paginaged", data)

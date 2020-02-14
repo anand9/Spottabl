@@ -13,7 +13,6 @@ import styles from './Team.module.scss'
 const TeamHome = () => {
   const [currentUser, setUser]=useState({...teamData[0]})
   const setCurrentUser=(user)=>{
-    console.log(user)
     setUser({
       ...currentUser,
       ...user

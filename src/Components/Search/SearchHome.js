@@ -16,9 +16,9 @@ class SearchHome extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      searchResult: [...searchData],
+      searchResult: searchData,
       filteredComp: [],
-      searchableList : [...searchData],
+      searchableList : searchData,
       limit: 5,
       offset: 0,
       pageCount: 1,
@@ -33,9 +33,7 @@ class SearchHome extends Component {
   }
 
   loadPageData=()=> {
-    console.log("offset is ", this.state.offset);
-    
-    let currentPaginatedData = this.state.searchResult.slice(this.state.offset, (this.state.offset+ this.state.limit))
+    let currentPaginatedData = this.state.searchResult.slice(this.state.offset, (this.state.offset+ this.state.limit))   
     this.setState({
       paginatedData: currentPaginatedData
     })
@@ -44,20 +42,20 @@ class SearchHome extends Component {
         pageCount:  Math.ceil(this.state.searchResult.length/this.state.limit)
       })
     }
-    console.log("welcome", this.state.paginatedData);
-    
+  
   }
 
   setSearch=(newList)=> {
     this.setState({
-      searchResult: [...newList]
-    })
+      searchResult: newList
+    },()=>{ this.loadPageData()})
   }
 
   setFilteredComp=(result)=> {
     this.setState({
       filteredComp: [...result]
     })
+   // this.loadPageData()
   }
 
   filterCompany=(filters)=>{
@@ -66,10 +64,10 @@ class SearchHome extends Component {
       this.setSearch([...newList])
       this.setFilteredComp([...newList])
     } else {
-      //console.log("ding", searchResult);
+      this.setSearch(this.state.searchableList)
       this.setFilteredComp(this.state.searchResult)
     }
-    this.loadPageData()
+    
   }
 
   companyFilterUpdate=(comp)=>{
@@ -97,14 +95,17 @@ class SearchHome extends Component {
     })
   }
 
-  filterList=(searchText)=>{ //filteredComp
-    this.state.filteredComp.length >0? this.setSearchbleList([...this.state.filteredComp]) : this.setSearchbleList([...searchData])
-    let newList = this.state.searchableList.filter((list)=>
-      (list.company.toLowerCase().search(searchText) !== -1) || (list.title.toLowerCase().search(searchText) !== -1)
-    )
-    this.setSearch([...newList])
-    this.loadPageData()
-   // console.log(searchResult);
+  filterList=(searchText)=>{
+    if (searchText) { 
+      this.state.filteredComp.length >0? this.setSearchbleList([...this.state.filteredComp]) : this.setSearchbleList([...searchData])
+      let newList = this.state.searchableList.filter((list)=>
+        (list.company.toLowerCase().search(searchText) !== -1) || (list.title.toLowerCase().search(searchText) !== -1)
+      )
+      this.setSearch(newList)
+    } else {
+      this.setSearch(searchData)
+    }
+
   }
 
 
