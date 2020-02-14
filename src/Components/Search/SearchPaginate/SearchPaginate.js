@@ -4,9 +4,6 @@ import styles from './SearchPaginate.module.scss'
 
 
 const SearchPaginate = (props) => {
-
-
-
   return (
     <div>
       <ReactPaginate

@@ -17,7 +17,7 @@ const TopNav = (props) => {
   return (
     <div>
       <Navbar color="light" light expand="md">
-        <NavbarBrand href="/"><img src="https://www.spottabl.com/images/spottabl_logo.png"  height="25"/></NavbarBrand>
+        <NavbarBrand href="/"><img alt="logo" src="https://www.spottabl.com/images/spottabl_logo.png"  height="25"/></NavbarBrand>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
           <Nav className="mr-auto" navbar>
