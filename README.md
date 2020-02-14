@@ -2,7 +2,7 @@
 
 ### `cd spottabl `
 
-In the project directory, you can run:
+In the project directory, you should run:
 
 ## Install dependencies 
 
