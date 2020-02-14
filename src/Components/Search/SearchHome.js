@@ -10,11 +10,12 @@ import searchData from '../../Data/SearchList.json'
 import SearchList from './SearchList/SearchList';
 import NoRecord from './SearchList/NoRecord';
 import styles from './Search.module.scss'
+import SearchPaginate from './SearchPaginate/SearchPaginate';
 
 
 const SearchHome = () => {
 
-  const [filtered, setFilter] = useState([...searchData])
+  const [searchResult, setSearch] = useState([...searchData])
   const [filteredComp, setFilteredComp] = useState([])
   //const [filteredComp, setFilterComp] = useState([])
 
@@ -24,7 +25,7 @@ const SearchHome = () => {
     let newList = searchableList.filter((list)=>
       (list.company.toLowerCase().search(searchText) !== -1) || (list.title.toLowerCase().search(searchText) !== -1)
     )
-    setFilter([...newList])
+    setSearch([...newList])
   }
 
   const companyFilterUpdate=(comp)=>{
@@ -44,9 +45,13 @@ const SearchHome = () => {
     let searchableList
 //    filtered.length >0? searchableList = filtered : searchableList = searchData
     if (filters.length>0){
-      let newList = filtered.filter((list)=> filters.includes(list.company))
-    setFilter([...newList])
-    setFilteredComp([...newList])
+      let newList = searchResult.filter((list)=> filters.includes(list.company))
+      setSearch([...newList])
+      setFilteredComp([...newList])
+    } else {
+      //console.log("ding", searchResult);
+      
+      setFilteredComp(searchResult)
     }
   }
   
@@ -57,15 +62,18 @@ const SearchHome = () => {
           <Col md="6" lg="6" xs="12" className="text-center">
             <div class={styles.searchContainer}>
             <SearchBar filterList={filterList} list={searchData} companyFilter={companyFilterUpdate}/>
-            {filtered.length >0? 
-            filtered.map((item)=> {
+            {searchResult.length >0? 
+            searchResult.map((item)=> {
               return (
-                <SearchList item={item} key={item.id} />
+                <SearchList item={item} key={item.id} /> 
               )
+              
             })
+            
             :
             <NoRecord />
           }
+          {searchResult.length >0 ? <SearchPaginate /> : ""}
           </div>
           </Col>
         </Row>

@@ -1,0 +1,30 @@
+.paginationContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+  list-style: none;
+  padding: 0;
+}
+
+.pageLink {
+  position: relative;
+  display: block;
+  padding: .5rem .75rem;
+  margin-left: -1px;
+  line-height: 1.25;
+  color: #007bff;
+  background-color: #fff;
+  cursor: pointer;
+  &:focus {
+    outline: none;
+  }
+}
+
+.pageItem {
+  box-shadow: -11px 5px 9px 0px #0000001a;
+}
+
+.activeItem {
+  font-weight: bold;
+  text-decoration: underline !important;
+}
