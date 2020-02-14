@@ -9,6 +9,7 @@ import SearchBar from './SearchBar/SearchBar';
 import searchData from '../../Data/SearchList.json'
 import SearchList from './SearchList/SearchList';
 import NoRecord from './SearchList/NoRecord';
+import styles from './Search.module.scss'
 
 
 const SearchHome = () => {
@@ -54,6 +55,7 @@ const SearchHome = () => {
       <Container>
         <Row className="justify-content-center">
           <Col md="6" lg="6" xs="12" className="text-center">
+            <div class={styles.searchContainer}>
             <SearchBar filterList={filterList} list={searchData} companyFilter={companyFilterUpdate}/>
             {filtered.length >0? 
             filtered.map((item)=> {
@@ -64,6 +66,7 @@ const SearchHome = () => {
             :
             <NoRecord />
           }
+          </div>
           </Col>
         </Row>
       </Container>
