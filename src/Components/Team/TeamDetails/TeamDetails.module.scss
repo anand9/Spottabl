@@ -1,0 +1,36 @@
+@import '../../../Assets/Styles/variable.scss';
+
+.outerBox {
+  border: 2px solid $brandText;
+  height: 28rem;
+  position: relative;
+}
+
+.userDetails {
+  padding-right: 5rem;
+  padding-left: 1rem;
+  text-align: left;
+  font-size: .9rem;
+  color: $brandText;
+}
+
+.userInfo {
+  margin-top: 2rem;
+}
+
+.userName {
+  margin-top: 5rem;
+  font-weight: 600;
+  font-size: 1rem;
+}
+.userTitle {
+  margin-top: 1rem;
+}
+.socialIcons {
+  color: #0073b0;
+  margin-left: .5rem;
+}
+
+.userDesc {
+  margin-top: .4rem;
+}
