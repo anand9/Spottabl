@@ -31,6 +31,7 @@ const SearchBar = (props) => {
           placeholder="Search by title or company"
           onChange={onchange}
           value={searchText}
+          autoFocus={true}
           className={"rounded-left "+styles.searchInput}
         />
         <InputGroupAddon addonType="prepend">
